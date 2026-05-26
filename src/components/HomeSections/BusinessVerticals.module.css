@@ -1,7 +1,7 @@
 .section {
   padding: 120px 8%;
-  background: #0a0f24;
-  color: #ffffff;
+  background: var(--bg-dark);
+  color: var(--text-main);
   position: relative;
   overflow: hidden;
 }
@@ -23,7 +23,7 @@
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #60a5fa;
+  color: var(--accent);
   letter-spacing: 3px;
   margin-bottom: 12px;
   display: block;
@@ -33,16 +33,16 @@
   font-family: var(--font-heading);
   font-size: 42px;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-main);
 }
 
 /* Tabs */
 .tabWrapper {
   display: flex;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.02);
   padding: 6px;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
 }
 
 .tabBtn {
@@ -51,7 +51,7 @@
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--text-muted);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -60,8 +60,8 @@
 
 .activeTab {
   color: #ffffff;
-  background: #2563eb;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  background: var(--accent);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
 }
 
 /* Verticals Layout */
@@ -87,8 +87,8 @@
   flex-direction: column;
   justify-content: flex-end;
   text-decoration: none;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s;
 }
 
@@ -120,7 +120,7 @@
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #60a5fa;
+  color: #93c5fd;
   letter-spacing: 2px;
   margin-bottom: 6px;
   display: block;
@@ -137,7 +137,7 @@
 .cardDesc {
   font-size: 13px;
   line-height: 1.5;
-  color: #94a3b8;
+  color: #cbd5e1;
   height: 0;
   opacity: 0;
   overflow: hidden;
@@ -158,7 +158,7 @@
 /* Side Card Hover States */
 .card:hover {
   transform: translateY(-8px);
-  border-color: rgba(96, 165, 250, 0.3);
+  border-color: rgba(37, 99, 235, 0.3);
 }
 
 .card:hover .cardBg {
@@ -190,8 +190,8 @@
   flex-direction: column;
   justify-content: flex-end;
   text-decoration: none;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s;
 }
 
@@ -223,7 +223,7 @@
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #60a5fa;
+  color: #93c5fd;
   letter-spacing: 3px;
   margin-bottom: 10px;
   display: block;
@@ -263,7 +263,7 @@
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 700;
-  color: #60a5fa;
+  color: #93c5fd;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: color 0.3s;
@@ -271,7 +271,7 @@
 
 .featuredCard:hover {
   transform: translateY(-8px);
-  border-color: rgba(96, 165, 250, 0.35);
+  border-color: rgba(37, 99, 235, 0.3);
 }
 
 .featuredCard:hover .featuredBg {
@@ -292,8 +292,8 @@
 
 /* Empty State listed companies */
 .emptyState {
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px dashed rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.015);
+  border: 1px dashed var(--border);
   border-radius: 24px;
   padding: 100px 40px;
   text-align: center;
@@ -303,21 +303,21 @@
 
 .emptyIcon {
   font-size: 50px;
-  color: #2563eb;
+  color: var(--accent);
   margin-bottom: 24px;
 }
 
 .emptyState h3 {
   font-family: var(--font-heading);
   font-size: 24px;
-  color: #ffffff;
+  color: var(--text-main);
   margin-bottom: 12px;
 }
 
 .emptyState p {
   font-size: 15px;
   line-height: 1.6;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 /* Responsive configurations */
