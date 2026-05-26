@@ -42,7 +42,7 @@ export default function Industries() {
   return (
     <div ref={containerRef}>
       {/* PAGE HERO */}
-      <section className="page-hero">
+      <section className="page-hero industries-hero">
         <div className="container">
           <div className="page-hero-content gsap-reveal" data-y="30">
             <span className="eyebrow">SECTORS WE SHAPE</span>
@@ -100,7 +100,7 @@ export default function Industries() {
                 {/* Content panel */}
                 <div style={{ direction: "ltr" }}>
                   <span className="eyebrow">{ind.eyebrow}</span>
-                  <h3 style={{ fontSize: "28px", marginBottom: "16px", color: "#fff" }}>{ind.title}</h3>
+                  <h3 style={{ fontSize: "28px", marginBottom: "16px", color: "var(--text-main)" }}>{ind.title}</h3>
                   <p style={{ color: "var(--text-muted)", fontSize: "16px", lineHeight: "1.7", marginBottom: "24px" }}>
                     {ind.desc}
                   </p>

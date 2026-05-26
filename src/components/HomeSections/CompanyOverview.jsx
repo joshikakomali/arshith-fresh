@@ -73,9 +73,6 @@ export default function CompanyOverview() {
               alt="Farook N - CEO Arshith Group"
               className={styles.ceoImage}
             />
-            <div className={styles.floatingTag}>
-              <span>Visionary Leadership</span>
-            </div>
           </div>
         </div>
       </div>

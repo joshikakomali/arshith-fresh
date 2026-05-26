@@ -51,7 +51,7 @@ export default function Businesses() {
   return (
     <div ref={containerRef}>
       {/* PAGE HERO */}
-      <section className="page-hero">
+      <section className="page-hero businesses-hero">
         <div className="container">
           <div className="page-hero-content gsap-reveal" data-y="30">
             <span className="eyebrow">OUR PORTFOLIO</span>

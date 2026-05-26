@@ -7,7 +7,7 @@ export default function Services() {
   return (
     <div ref={containerRef}>
       {/* PAGE HERO */}
-      <section className="page-hero">
+      <section className="page-hero services-hero">
         <div className="container">
           <div className="page-hero-content gsap-reveal" data-y="30">
             <span className="eyebrow">OUR SOLUTIONS</span>
@@ -149,7 +149,7 @@ export default function Services() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }} className="gsap-reveal">
           <div>
             <span className="eyebrow">PARTNERSHIP VALUE</span>
-            <h2 style={{ fontSize: "36px", marginBottom: "20px", color: "#fff" }}>Unlocking Exponential Growth Potential</h2>
+            <h2 style={{ fontSize: "36px", marginBottom: "20px", color: "var(--text-main)" }}>Unlocking Exponential Growth Potential</h2>
             <p style={{ color: "var(--text-muted)", marginBottom: "16px", fontSize: "16px" }}>
               We collaborate with corporate stakeholders and startup partners alike to bridge technical execution with operational business objectives. By combining secure data storage, search optimization, and modern UI engineering, we ensure your platforms remain scalable over time.
             </p>

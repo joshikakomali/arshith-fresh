@@ -8,79 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function About() {
   const containerRef = useScrollReveal();
   const timelineRef = useRef(null);
-  const heroRef = useRef(null);
-  const heroBgRef = useRef(null);
-  const heroMidRef = useRef(null);
-  const heroFgRef = useRef(null);
-  const heroTextRef = useRef(null);
-
-  useEffect(() => {
-    // 1. Entrance animation using GSAP context
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-      tl.fromTo(
-        heroBgRef.current,
-        { scale: 1.15 },
-        { scale: 1.02, duration: 6, ease: "sine.out" }
-      );
-      
-      const elements = heroTextRef.current.children;
-      gsap.set(elements, { opacity: 0, y: 35 });
-      tl.to(
-        elements,
-        { opacity: 1, y: 0, stagger: 0.15, duration: 1.2, ease: "power3.out" },
-        0.5
-      );
-    }, heroRef);
-
-    // 2. Mouse move parallax on hero layers
-    const hero = heroRef.current;
-    if (!hero) return;
-
-    const handleMouseMove = (e) => {
-      const rect = hero.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const normX = x / rect.width;
-      const normY = y / rect.height;
-
-      gsap.to(heroBgRef.current, { x: normX * -15, y: normY * -15, duration: 1.2, ease: "power2.out", overwrite: "auto" });
-      gsap.to(heroMidRef.current, { x: normX * -30, y: normY * -30, duration: 1.0, ease: "power2.out", overwrite: "auto" });
-      gsap.to(heroFgRef.current, { x: normX * -55, y: normY * -55, duration: 0.8, ease: "power2.out", overwrite: "auto" });
-    };
-
-    hero.addEventListener("mousemove", handleMouseMove);
-
-    // 3. ScrollTrigger parallax shift for About Hero
-    const scrollCtx = gsap.context(() => {
-      gsap.to(heroTextRef.current, {
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-        yPercent: 40,
-        ease: "none",
-      });
-      gsap.to(heroBgRef.current, {
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-        yPercent: 12,
-        ease: "none",
-      });
-    }, hero);
-
-    return () => {
-      ctx.revert();
-      scrollCtx.revert();
-      hero.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   useEffect(() => {
     // Milestones scroll progress line animation
@@ -112,35 +39,10 @@ export default function About() {
 
   return (
     <div ref={containerRef}>
-      {/* FULLSCREEN IMMERSIVE HERO */}
-      <section className="about-hero" ref={heroRef}>
-        {/* Layer 1: Background Zoom */}
-        <div 
-          className="about-hero-bg" 
-          ref={heroBgRef}
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop')` }}
-        />
-        
-        {/* Overlay */}
-        <div className="about-hero-overlay" />
-
-        {/* Layer 2: Midground Graphic */}
-        <div className="about-hero-mid" ref={heroMidRef}>
-          <img src="/assests/logo.png" alt="Arshith Logo" className="about-hero-logo" />
-        </div>
-
-        {/* Layer 3: Foreground Card */}
-        <div className="about-hero-fg" ref={heroFgRef}>
-          <div className="about-stats-card">
-            <span className="stats-label">Est. Year</span>
-            <span className="stats-value">2018</span>
-            <span className="stats-desc">Pioneering corporate trust and engineering solutions.</span>
-          </div>
-        </div>
-
-        {/* Hero Content Container */}
-        <div className="container about-hero-container">
-          <div className="about-hero-content" ref={heroTextRef}>
+      {/* PAGE HERO */}
+      <section className="page-hero about-hero">
+        <div className="container">
+          <div className="page-hero-content gsap-reveal" data-y="30">
             <span className="eyebrow">ABOUT US</span>
             <h1>
               Building Trust <br />
@@ -149,13 +51,6 @@ export default function About() {
             <p>
               Empowering businesses and communities with cutting-edge technology, natural sourcing, and future-ready enterprise solutions.
             </p>
-            
-            <div className="scroll-indicator" onClick={() => {
-              window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-            }}>
-              <span className="scroll-text">Discover Our Legacy</span>
-              <i className="ri-arrow-down-line bounce-arrow"></i>
-            </div>
           </div>
         </div>
       </section>
@@ -165,14 +60,14 @@ export default function About() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }} className="gsap-reveal">
           <div style={{ position: "relative", borderRadius: "var(--radius-lg)", overflow: "hidden", height: "450px" }}>
             <img 
-              src="/assests/group.png" 
-              alt="Arshith Group Team" 
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+               src="/assests/group.png" 
+               alt="Arshith Group Team" 
+               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </div>
           <div>
             <span className="eyebrow">OUR LEGACY</span>
-            <h2 style={{ fontSize: "36px", marginBottom: "20px", color: "#fff" }}>The Arshith Story</h2>
+            <h2 style={{ fontSize: "36px", marginBottom: "20px", color: "var(--text-main)" }}>The Arshith Story</h2>
             <p style={{ color: "var(--text-muted)", marginBottom: "16px", fontSize: "16px" }}>
               <strong>Arshith Group</strong> is a dynamic and growing ecosystem built on trust, innovation, and a vision for sustainable growth. At its core, the organization is driven by strong pillars - <strong>Arshith Infotech, Arshith Fresh, and Suntech Solutions</strong> - each contributing uniquely to our mission of delivering excellence.
             </p>

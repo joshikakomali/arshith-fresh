@@ -90,12 +90,12 @@ export default function BlogDetail() {
       </div>
 
       {/* ARTICLE HERO */}
-      <section className="page-hero" style={{ background: `radial-gradient(circle at center, rgba(3,7,18,0.4) 0%, rgba(3,7,18,0.95) 100%), url('${post.image}') center/cover no-repeat` }}>
+      <section className="page-hero" style={{ background: `radial-gradient(circle at center, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.92) 100%), url('${post.image}') center/cover no-repeat` }}>
         <div className="container">
           <div className="page-hero-content gsap-reveal" style={{ maxWidth: "900px" }}>
             <span className="eyebrow">{post.tag}</span>
             <span style={{ fontSize: "13px", color: "var(--accent)", display: "block", marginBottom: "15px" }}>{post.date}</span>
-            <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.8rem)", lineHeight: "1.2", textShadow: "0 5px 20px rgba(0,0,0,0.6)" }}>
+            <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.8rem)", lineHeight: "1.2", color: "var(--text-main)" }}>
               {post.title}
             </h1>
           </div>
@@ -107,7 +107,7 @@ export default function BlogDetail() {
         <div className="blog-detail-layout">
           {/* Main Article Body */}
           <div className="blog-detail-article gsap-reveal">
-            <p style={{ fontSize: "18px", color: "#fff", fontWeight: "500", marginBottom: "2rem" }}>
+            <p style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: "500", marginBottom: "2rem" }}>
               {post.desc}
             </p>
 

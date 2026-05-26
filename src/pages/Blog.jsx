@@ -72,7 +72,7 @@ export default function Blog() {
   return (
     <div ref={containerRef}>
       {/* PAGE HERO */}
-      <section className="page-hero">
+      <section className="page-hero blog-hero">
         <div className="container">
           <div className="page-hero-content gsap-reveal" data-y="30">
             <span className="eyebrow">EDITORIAL CENTER</span>
@@ -119,7 +119,7 @@ export default function Blog() {
           <div style={{ padding: "40px" }}>
             <span className="blog-card-tag">{featuredPost.tag}</span>
             <span style={{ fontSize: "13px", color: "var(--text-muted)", display: "block", marginBottom: "15px" }}>{featuredPost.date}</span>
-            <h3 style={{ fontSize: "28px", lineHeight: "1.3", marginBottom: "16px", color: "#fff" }}>{featuredPost.title}</h3>
+            <h3 style={{ fontSize: "28px", lineHeight: "1.3", marginBottom: "16px", color: "var(--text-main)" }}>{featuredPost.title}</h3>
             <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: "1.6", marginBottom: "24px" }}>
               {featuredPost.desc}
             </p>

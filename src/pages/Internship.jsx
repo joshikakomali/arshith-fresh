@@ -8,7 +8,7 @@ export default function Internship() {
   return (
     <div ref={containerRef}>
       {/* PAGE HERO */}
-      <section className="page-hero">
+      <section className="page-hero careers-hero">
         <div className="container">
           <div className="page-hero-content gsap-reveal" data-y="30">
             <span className="eyebrow">INTERNSHIP HUB</span>

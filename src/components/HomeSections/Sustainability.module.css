@@ -1,7 +1,7 @@
 .section {
   padding: 140px 8%;
-  background: linear-gradient(180deg, #0a0f24 0%, #060a17 100%);
-  color: #ffffff;
+  background: var(--bg-dark);
+  color: var(--text-main);
   position: relative;
   overflow: hidden;
 }
@@ -26,14 +26,14 @@
   aspect-ratio: 0.85;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(6, 10, 23, 0.75) 100%);
+  background: linear-gradient(180deg, transparent 50%, rgba(255, 255, 255, 0.15) 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -52,36 +52,36 @@
   position: absolute;
   bottom: 40px;
   left: 40px;
-  background: rgba(6, 10, 23, 0.45);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 20px 24px;
   display: flex;
   align-items: center;
   gap: 15px;
   z-index: 3;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
   max-width: 80%;
 }
 
 .floatingCard i {
   font-size: 24px;
-  color: #60a5fa;
+  color: var(--accent);
 }
 
 .floatingCard h4 {
   font-family: var(--font-heading);
   font-size: 15px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-main);
   margin-bottom: 2px;
 }
 
 .floatingCard p {
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 /* Content Column progressive text */
@@ -95,7 +95,7 @@
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #60a5fa;
+  color: var(--accent);
   letter-spacing: 3px;
   margin-bottom: 20px;
 }
@@ -109,7 +109,7 @@
 }
 
 .title span {
-  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -117,7 +117,7 @@
 .desc {
   font-size: 17px;
   line-height: 1.7;
-  color: #94a3b8;
+  color: var(--text-muted);
   margin-bottom: 40px;
 }
 
@@ -138,8 +138,8 @@
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: rgba(37, 99, 235, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,21 +148,21 @@
 
 .iconBox i {
   font-size: 18px;
-  color: #60a5fa;
+  color: var(--accent);
 }
 
 .featureItem h4 {
   font-family: var(--font-heading);
   font-size: 17px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-main);
   margin-bottom: 4px;
 }
 
 .featureItem p {
   font-size: 14px;
   line-height: 1.5;
-  color: #64748b;
+  color: var(--text-muted);
   max-width: 90%;
 }
 
@@ -171,7 +171,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--border);
   padding-top: 35px;
 }
 
@@ -188,14 +188,14 @@
 .badgeText strong {
   font-family: var(--font-heading);
   font-size: 15px;
-  color: #ffffff;
+  color: var(--text-main);
   font-weight: 700;
   letter-spacing: 0.5px;
 }
 
 .badgeText span {
   font-size: 12px;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 /* Responsive configurations */
