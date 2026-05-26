@@ -5,6 +5,24 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
+
+  useEffect(() => {
+    if (theme === "light") {
+      document.documentElement.classList.add("light-mode");
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.classList.remove("light-mode");
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -136,15 +154,25 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        <button 
-          className={`hamburger ${isOpen ? "hamburger-active" : ""}`} 
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="nav-controls" style={{ display: "flex", alignItems: "center" }}>
+          <button 
+            onClick={toggleTheme} 
+            className="theme-toggle-btn"
+            aria-label="Toggle theme"
+          >
+            <i className={theme === "dark" ? "ri-sun-line" : "ri-moon-line"}></i>
+          </button>
+
+          <button 
+            className={`hamburger ${isOpen ? "hamburger-active" : ""}`} 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </header>
 
       {/* Fullscreen Mobile Drawer */}
