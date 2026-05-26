@@ -11,28 +11,20 @@ gsap.registerPlugin(ScrollTrigger);
  */
 export default function useScrollReveal(options = {}) {
   const containerRef = useRef(null);
-  const optionsRef = useRef(options);
-
-  // Keep options updated in ref without triggering re-runs of the main effect
-  useEffect(() => {
-    optionsRef.current = options;
-  }, [options]);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    const opt = optionsRef.current;
-
     const ctx = gsap.context(() => {
-      const selector = opt.selector || ".gsap-reveal";
+      const selector = options.selector || ".gsap-reveal";
       const elements = container.querySelectorAll(selector);
 
       elements.forEach((el) => {
         const delay = parseFloat(el.getAttribute("data-delay")) || 0;
         const customY = el.getAttribute("data-y") !== null 
           ? parseFloat(el.getAttribute("data-y")) 
-          : (opt.yOffset !== undefined ? opt.yOffset : 40);
+          : (options.yOffset !== undefined ? options.yOffset : 40);
         
         gsap.fromTo(
           el,
@@ -43,13 +35,13 @@ export default function useScrollReveal(options = {}) {
           {
             opacity: 1,
             y: 0,
-            duration: opt.duration || 1.2,
+            duration: options.duration || 1.2,
             delay: delay,
-            ease: opt.ease || "power3.out",
+            ease: options.ease || "power3.out",
             scrollTrigger: {
               trigger: el,
-              start: opt.start || "top 88%",
-              toggleActions: opt.toggleActions || "play none none none",
+              start: options.start || "top 88%",
+              toggleActions: options.toggleActions || "play none none none",
             },
           }
         );
@@ -57,6 +49,7 @@ export default function useScrollReveal(options = {}) {
     }, container);
 
     return () => ctx.revert();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Run exactly once on mount
 
   return containerRef;
