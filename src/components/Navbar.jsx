@@ -82,24 +82,6 @@ export default function Navbar() {
                 <li>
                   <Link to="/internship">Internship</Link>
                 </li>
-                <li>
-                  <a 
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSeuJ0Gypsx9tuPK9jHDwNQchAXFtykeKWD7NPBb_VxilLdYwA/viewform?usp=publish-editor" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Technical Confirmation
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://quizzory.in/id/69f8284ef7e103e112b455ef" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Online Assessment
-                  </a>
-                </li>
               </ul>
             </li>
 

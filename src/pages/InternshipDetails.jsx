@@ -19,31 +19,32 @@ export default function InternshipDetails() {
 
     const fileInput = form.resume;
     const file = fileInput.files[0];
-    if (file && file.type !== "application/pdf") {
+    if (!file) {
+      alert("Please upload your PDF resume");
+      return;
+    }
+    if (file.type !== "application/pdf") {
       alert("Only PDF files are allowed");
       return;
     }
 
-    const formData = {
-      name: form.elements.name.value,
-      email: form.elements.email.value,
-      phone: form.elements.phone.value,
-      degree: form.elements.degree.value,
-      domain: form.elements.domain.value,
-      months: form.elements.months.value,
-      mode: form.elements.mode.value,
-      comments: form.elements.comments.value,
-    };
+    const formData = new FormData();
+    formData.append("name", form.elements.name.value);
+    formData.append("email", form.elements.email.value);
+    formData.append("phone", form.elements.phone.value);
+    formData.append("degree", form.elements.degree.value);
+    formData.append("domain", form.elements.domain.value);
+    formData.append("months", form.elements.months.value);
+    formData.append("mode", form.elements.mode.value);
+    formData.append("comments", form.elements.comments.value);
+    formData.append("resume", file);
 
     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
     try {
       const response = await fetch(`${apiUrl}/apply`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formData,
       });
 
       const data = await response.json();

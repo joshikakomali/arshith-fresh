@@ -17,5 +17,6 @@ CREATE TABLE IF NOT EXISTS internship_applications (
   months VARCHAR(50) NOT NULL,
   mode VARCHAR(50) NOT NULL,
   comments TEXT,
+  resume_path VARCHAR(500),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
