@@ -92,7 +92,7 @@ export default function Industries() {
                     alt={ind.title} 
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
-                  <div style={{ position: "absolute", top: "30px", left: "30px", width: "50px", height: "50px", background: "rgba(3, 7, 18, 0.85)", backdropFilter: "blur(10px)", border: "1px solid var(--border)", borderRadius: "50%", display: "flex", alignItems: "center", justify: "center", fontSize: "20px", color: "var(--accent)" }}>
+                  <div style={{ position: "absolute", top: "30px", left: "30px", width: "50px", height: "50px", background: "rgba(3, 7, 18, 0.85)", backdropFilter: "blur(10px)", border: "1px solid var(--border)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", color: "var(--accent)" }}>
                     <i className={ind.icon}></i>
                   </div>
                 </div>

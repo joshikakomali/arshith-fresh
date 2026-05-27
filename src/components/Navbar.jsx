@@ -55,35 +55,8 @@ export default function Navbar() {
               <Link to="/services" className={isActive("/services") ? "active" : ""}>Services</Link>
             </li>
 
-            <li className="dropdown">
-              <Link to="/portfolio" className={isActive("/portfolio") ? "active" : ""}>
-                Businesses <i className="ri-arrow-down-s-line"></i>
-              </Link>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link to="/services">IT Services & IT Consulting</Link>
-                </li>
-                <li>
-                  <a href="https://arshithfresh.com/" target="_blank" rel="noopener noreferrer">
-                    E-Commerce
-                  </a>
-                </li>
-                <li>
-                  <a href="https://seller.arshithfresh.com/" target="_blank" rel="noopener noreferrer">
-                    Multi sellers
-                  </a>
-                </li>
-                <li>
-                  <a href="https://suntechorganization.com/" target="_blank" rel="noopener noreferrer">
-                    Business Consulting & Services
-                  </a>
-                </li>
-                <li>
-                  <a href="https://suntechorganization.com/" target="_blank" rel="noopener noreferrer">
-                    Digital Marketing
-                  </a>
-                </li>
-              </ul>
+            <li>
+              <Link to="/portfolio" className={isActive("/portfolio") ? "active" : ""}>Businesses</Link>
             </li>
 
             <li>

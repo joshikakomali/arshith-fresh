@@ -824,76 +824,73 @@ section.light-contrast .text-muted {
   border-radius: var(--radius-lg);
   overflow: hidden;
   height: 480px;
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 40px;
   transition: var(--transition-smooth);
+  text-decoration: none;
 }
 
 .brand-card-luxury:hover {
-  border-color: var(--border-hover);
+  border-color: rgba(37, 99, 235, 0.3);
   transform: translateY(-5px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04);
 }
 
-.brand-card-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 1;
+.brand-card-image-wrapper {
+  background: #ffffff;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 
-.brand-card-luxury:hover .brand-card-bg {
+.brand-card-logo-img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.brand-card-luxury:hover .brand-card-logo-img {
   transform: scale(1.08);
 }
 
-.brand-card-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.95) 90%);
-  z-index: 2;
-  transition: var(--transition-smooth);
-}
-
-.brand-card-luxury:hover .brand-card-gradient {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.98) 85%);
-}
-
 .brand-card-info {
-  position: relative;
-  z-index: 3;
-  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: var(--bg-card);
 }
 
 .brand-card-info span {
   font-family: var(--font-heading);
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
   display: block;
 }
 
 .brand-card-info h3 {
-  font-size: 26px;
+  font-size: 24px;
   color: var(--text-main);
   margin-bottom: 12px;
+  font-weight: 800;
 }
 
 .brand-card-info p {
   color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
 }
 
 /* CAREERS & RECRUITMENT */

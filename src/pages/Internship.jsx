@@ -78,7 +78,7 @@ export default function Internship() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "30px" }} className="gsap-reveal">
           <div style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "40px", borderRadius: "var(--radius-lg)" }}>
-            <div style={{ width: "50px", height: "50px", background: "rgba(197,168,128,0.1)", borderRadius: "50%", display: "flex", alignItems: "center", justify: "center", fontSize: "20px", color: "var(--accent)", marginBottom: "20px" }}>
+            <div style={{ width: "50px", height: "50px", background: "rgba(37,99,235,0.08)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", color: "var(--accent)", marginBottom: "20px" }}>
               <i className="ri-layout-4-line"></i>
             </div>
             <h3 style={{ color: "#0f172a", fontSize: "20px", marginBottom: "12px" }}>Strong UI Fidelity</h3>
@@ -86,7 +86,7 @@ export default function Internship() {
           </div>
 
           <div style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "40px", borderRadius: "var(--radius-lg)" }}>
-            <div style={{ width: "50px", height: "50px", background: "rgba(197,168,128,0.1)", borderRadius: "50%", display: "flex", alignItems: "center", justify: "center", fontSize: "20px", color: "var(--accent)", marginBottom: "20px" }}>
+            <div style={{ width: "50px", height: "50px", background: "rgba(37,99,235,0.08)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", color: "var(--accent)", marginBottom: "20px" }}>
               <i className="ri-folder-open-line"></i>
             </div>
             <h3 style={{ color: "#0f172a", fontSize: "20px", marginBottom: "12px" }}>Production Portfolios</h3>
@@ -94,7 +94,7 @@ export default function Internship() {
           </div>
 
           <div style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "40px", borderRadius: "var(--radius-lg)" }}>
-            <div style={{ width: "50px", height: "50px", background: "rgba(197,168,128,0.1)", borderRadius: "50%", display: "flex", alignItems: "center", justify: "center", fontSize: "20px", color: "var(--accent)", marginBottom: "20px" }}>
+            <div style={{ width: "50px", height: "50px", background: "rgba(37,99,235,0.08)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", color: "var(--accent)", marginBottom: "20px" }}>
               <i className="ri-user-star-line"></i>
             </div>
             <h3 style={{ color: "#0f172a", fontSize: "20px", marginBottom: "12px" }}>Interview Confidence</h3>

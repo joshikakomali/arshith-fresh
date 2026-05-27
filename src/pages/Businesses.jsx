@@ -110,11 +110,9 @@ export default function Businesses() {
               key={brand.id}
               className="brand-card-luxury"
             >
-              <div 
-                className="brand-card-bg" 
-                style={{ backgroundImage: `url('${brand.image}')` }}
-              />
-              <div className="brand-card-gradient" />
+              <div className="brand-card-image-wrapper">
+                <img src={brand.image} alt={brand.name} className="brand-card-logo-img" />
+              </div>
               <div className="brand-card-info">
                 <span>{brand.tag}</span>
                 <h3>{brand.name}</h3>
